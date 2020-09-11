@@ -17,10 +17,10 @@
 
 
 echo ------ glibc qemu + glibc binary ------
-qemu-aarch64 /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 --library-path "/usr/aarch64-linux-gnu/lib:/usr/aarch64-linux-gnu/lib64" ./glibc.out
+qemu-aarch64 ./ld-linux-aarch64.so.1 --library-path ./glibc-lib/ ./glibc.out
 
 echo ------ musl qemu + glibc binary ------
-qemu-aarch64-static /usr/aarch64-linux-gnu/lib/ld-linux-aarch64.so.1 --library-path "/usr/aarch64-linux-gnu/lib:/usr/aarch64-linux-gnu/lib64" ./glibc.out
+qemu-aarch64-static ./ld-linux-aarch64.so.1 --library-path ./glibc-lib/ ./glibc.out
 
 echo ------ glibc qemu + glibc static binary ------
 qemu-aarch64 ./glibc-static.out
